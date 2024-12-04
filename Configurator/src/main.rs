@@ -49,7 +49,7 @@ impl eframe::App for MyApp {
 fn read_webhook_from_file() -> String {
     let file_path = "Extension/background.js";
     let contents = std::fs::read_to_string(file_path).unwrap_or_else(|_| {
-        eprintln!("Не удалось прочитать файл: {}", file_path);
+        eprintln!("Fail to read or not found: {}", file_path);
         String::new()
     });
 
@@ -65,11 +65,11 @@ fn read_webhook_from_file() -> String {
         if line.len() >= end_col {
             return line[start_col..end_col].to_string(); // Извлекаем подстроку
         } else {
-            eprintln!("Неправильные индексы: строка меньше чем {}", end_col);
-            eprintln!("Длина строки: {}", line.len());
+            eprintln!("Wrong index: string less than {}", end_col);
+            eprintln!("string length: {}", line.len());
         }
     } else {
-        eprintln!("Строка 1751 не найдена в файле.");
+        eprintln!("string 1751 not found in file.");
     }
 
     String::new() // Возвращаем пустую строку, если что-то пошло не так
