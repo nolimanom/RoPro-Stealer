@@ -1,8 +1,0 @@
-[package]
-name = "CookieStealer_configurator"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-eframe = "0.20"
-egui = "0.20"
